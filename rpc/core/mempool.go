@@ -148,7 +148,7 @@ func UnconfirmedTxs(ctx *rpctypes.Context, limitPtr *int) (*ctypes.ResultUnconfi
 		}
 	}
 
-	txs := env.Mempool.ReapMaxTxs(limit)
+	txs := env.Mempool.ReapMaxTxs(-1)
 	return &ctypes.ResultUnconfirmedTxs{
 		Count:      len(txs),
 		Total:      env.Mempool.Size(),
